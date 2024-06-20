@@ -1,0 +1,25 @@
+.row{
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #fff;
+}
+
+.rowPost{
+    display: flex;
+    padding: 20px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.rowPost::-webkit-scrollbar{
+    display: none;
+}
+
+
+
+.Posts{
+    max-height: 250px;
+    margin-left: 10px;
+}
+
+
+
