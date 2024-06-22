@@ -3,6 +3,7 @@ import './Banner.css'
 import Axios from '../../Constans/Axios'
 import { trending,imageUrl, baseURL, API_KEY } from '../../Constans/Urls'
 import YouTube from 'react-youtube'
+import Swal from 'sweetalert2'
 
 
 function Banner() {
@@ -14,7 +15,14 @@ function Banner() {
       Axios.get(trending).then((response)=>{
         setMovie(response.data.results[0])
       }).catch((error) => {
-        alert('You must enable VPN to enjoy!!!')
+        Swal.fire({
+          title: "You must enable VPN to enjoy!!!",
+          width: 500,
+          padding: "1em",
+          color: "red",
+          background: "#fff ",
+          backdrop: `rgba(255, 0, 0, 0.25)`
+        });
         console.error('Error fetching data:', error)
       });
   
@@ -31,7 +39,14 @@ function Banner() {
         }
       }).catch((error)=>{
         console.log(error)
-        alert('You must enable VPN to enjoy!!!')
+        Swal.fire({
+          title: "You must enable VPN to enjoy!!!",
+          width: 500,
+          padding: "1em",
+          color: "red",
+          background: "#fff ",
+          backdrop: `rgba(255, 0, 0, 0.25)`
+        });
       })
     }
 

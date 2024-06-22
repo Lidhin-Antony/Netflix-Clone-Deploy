@@ -1,0 +1,19 @@
+  
+To open the server in edge
+
+"scripts": {
+    "start": "set \"BROWSER=none\" && start microsoft-edge:http://localhost:3000 && react-scripts start ",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+
+
+To open the server default 
+
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },

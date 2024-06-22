@@ -3,19 +3,26 @@ import './RowLists.css'
 import { API_KEY, baseURL, imageUrl } from '../../Constans/Urls';
 import Axios from '../../Constans/Axios';
 import YouTube from 'react-youtube';
-import Popup from 'reactjs-popup';
-
+import Swal from 'sweetalert2'
 
 function RowLists(props) {
   const [posts, setPosts] = useState([])
   const [videoId, setVideoId] = useState('')
-  const [showPopup, setShowPopup] = useState(true);
+  // const Swal = require('sweetalert2')
 
   useEffect(() => {
     Axios.get(props.url).then((response)=>{
       setPosts(response.data.results)
     }).catch((error) => {
-      alert('You must enable VPN to enjoy!!!')
+      // alert('You must enable VPN to enjoy!!!')
+      Swal.fire({
+        title: "You must enable VPN to enjoy!!!",
+        width: 500,
+        padding: "1em",
+        color: "red",
+        background: "#fff ",
+        backdrop: `rgba(255, 0, 0, 0.25)`
+      });
       console.error('Error fetching data:', error);
     });
 
@@ -23,11 +30,6 @@ function RowLists(props) {
 
 
 
-  const popUp = (content) => (
-    <Popup disabled={showPopup} trigger={<div></div>} position="right center">
-      <div>{content}</div>
-    </Popup>
-  );
 
 
   const opts = {
@@ -43,7 +45,15 @@ function RowLists(props) {
       if (response.data.results.length!==0) {
         setVideoId(response.data.results[0])
       } else {
-        alert('The video is not available😢😢😢\n Try another video...')
+        Swal.fire({
+          icon: 'error',
+          title: "The video is not available😢😢\n Try another video...",
+          width: 600,
+          padding: "1em",
+          color: "red",
+          background: "#fff ",
+          backdrop: `rgba(255, 0, 0, 0.25)`
+        });
         console.log('Error:',response.data.results);
       }
     }).catch((error)=>{
