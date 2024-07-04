@@ -3,7 +3,7 @@ import './App.css';
 import Banner from './Components/Banner/Banner';
 import NavBar from './Components/NavBar/NavBar';
 import RowLists from './Components/RowLists/RowLists';
-import { ComedyMovies, HorrorMovies, RomanceMovies, action, originals } from './Constans/Urls';
+import { ComedyMovies, HorrorMovies, RomanceMovies, action, trending } from './Constans/Urls';
 
 
 
@@ -12,7 +12,7 @@ function App() {
     <div>
       <NavBar/>
       <Banner/>
-      <RowLists title={'Orginals'} url={originals} />
+      <RowLists title={'Trending'} url={trending} />
       <RowLists title={'Action'} url={action} isSmall />
       <RowLists title={'Comedy'} url={ComedyMovies} isSmall />
       <RowLists title={'Horror'} url={HorrorMovies} isSmall />
