@@ -15,8 +15,6 @@ export const apiReadAccessToken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNzU3ZGJmYmUx
 
 
 
-// TMDB username and password = ecartcompany
-// email = toxobo2759@egela.com
 
 
 
